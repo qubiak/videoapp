@@ -21,7 +21,7 @@ public class VideoCassetteManager {
         return videoCassetteRepository.findById(id);
     }
 
-    public Iterable<VideoCassette> findAll(Long id) {
+    public Iterable<VideoCassette> findAll() {
         return videoCassetteRepository.findAll();
     }
 
@@ -29,7 +29,7 @@ public class VideoCassetteManager {
         return videoCassetteRepository.save(videoCassette);
     }
 
-    public void delateById(Long id) {
+    public void deleteById(Long id) {
         videoCassetteRepository.deleteById(id);
     }
 }
