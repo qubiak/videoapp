@@ -1,4 +1,4 @@
-package pl.qubaik.videoapp;
+package pl.qubaik.videoapp.Api;
 
 import org.springframework.web.bind.annotation.*;
 import pl.qubaik.videoapp.Model.VideoCassette;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/cassetts/")
+@RequestMapping("/api/cassetts")
 public class VideoCassetteApi {
 
     private List<VideoCassette> videoCassettes;
@@ -24,7 +24,7 @@ public class VideoCassetteApi {
         return videoCassettes;
     }
 
-    @GetMapping("/byId")
+    @GetMapping()
     public VideoCassette getById(@RequestParam int index) {
         Optional<VideoCassette> first = videoCassettes.stream().filter(element -> element.getId() == index).findFirst();
         return first.get();
