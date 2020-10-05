@@ -1,19 +1,24 @@
-package pl.qubaik.videoapp;
+package pl.qubaik.videoapp.Model;
 
-import java.time.LocalDate;
+import javax.persistence.*;
 
+@Entity
 public class VideoCassette {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id;
 
+    @Column
     private String title;
 
-    private LocalDate productionYear;
+    @Column
+    private Long productionYear;
 
     public VideoCassette() {
     }
 
-    public VideoCassette(Long id, String title, LocalDate productionYear) {
+    public VideoCassette(long id, String title, long productionYear) {
         this.id = id;
         this.title = title;
         this.productionYear = productionYear;
@@ -35,11 +40,11 @@ public class VideoCassette {
         this.title = title;
     }
 
-    public LocalDate getProductionYear() {
+    public Long getProductionYear() {
         return productionYear;
     }
 
-    public void setProductionYear(LocalDate productionYear) {
+    public void setProductionYear(Long productionYear) {
         this.productionYear = productionYear;
     }
 }
